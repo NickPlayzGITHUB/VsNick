@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="qbPortrait.png">
+	<SubTexture name="Portrait Enter10000" x="106" y="0" width="53" height="68"/>
+</TextureAtlas>

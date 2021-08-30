@@ -1,0 +1,27 @@
+This mod was initially planned to be a decimation of the entire game, but $MAINDEV
+has decided to pull a Schrödinger's 180, and mix it with other mods.
+
+This mod is not made in Kade Engine, because:
+1. $MAINDEV is a masochist
+2. This mod started development before Kade Engine started picking up popularity
+3. Kade Engine is for pussies
+
+However, various Kade Engine features have been added:
+- Dialogue       (system based off of FNF Restored)
+- Double framerate (will be added in final version)
+- Downscroll
+- Song time
+
+Added features:
+- ZXBN keybinds
+- Open notes
+- Basic options menu
+- Rich Presence  (wasn't on the base repo at the time of download)
+- Y difficulty      (an experience that isn't allowed in Freeplay)
+                    !!!!      (work needed on *almost every song*)
+
+General credit:
+- Vs. Whitty: Sock.clip, Nate Anim7 & KADEDEV (https://gamebanana.com/gamefiles/14457)
+    - Usage: Week?
+- Trying out unusual genre combinations with OpenAI Jukebox: Broccaloo (https://www.youtube.com/watch?v=-arQvUrIMNc)
+    - Usage: Open test (Death Salsa)

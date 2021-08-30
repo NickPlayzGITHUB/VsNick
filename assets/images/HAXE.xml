@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="HAXE.png">
+	<!-- Created with pain -->
+
+	<SubTexture name="haxe idle0000" x="2220" y="0" width="1042" height="925" frameX="0" frameY="-49" frameWidth="1042" frameHeight="1042"/>
+	<SubTexture name="haxe idle0001" x="1048" y="0" width="1042" height="925" frameX="0" frameY="-49" frameWidth="1042" frameHeight="1042"/>
+	<SubTexture name="haxe idle0002" x="0" y="0" width="1042" height="925" frameX="0" frameY="-49" frameWidth="1042" frameHeight="1042"/>
+	<SubTexture name="flixel sing left0000" x="0" y="942" width="1042" height="1042"/>
+	<SubTexture name="flixel sing left0001" x="1110" y="942" width="1042" height="1042"/>
+	<SubTexture name="flixel sing up0000" x="0" y="2293" width="821" height="821"/>
+	<SubTexture name="flixel sing up0001" x="761" y="2293" width="821" height="821"/>
+	<SubTexture name="flixel sing down0000" x="2182" y="1409" width="628" height="1042" frameX="-207" frameY="0" frameWidth = "1042" frameHeight="1042"/>
+	<SubTexture name="flixel sing down0001" x="3037" y="1409" width="628" height="1042" frameX="-207" frameY="0" frameWidth = "1042" frameHeight="1042"/>
+	<SubTexture name="flixel sing right0000" x="1724" y="2862" width="1042" height="1042"/>
+	<SubTexture name="flixel sing right0001" x="2694" y="2862" width="1042" height="1042"/>
+</TextureAtlas>

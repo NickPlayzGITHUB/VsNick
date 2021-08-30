@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gfCar.png">
+	<!-- suffer some more -->
+	<SubTexture name="PsychSpirt Idle0000" x="0" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Idle0001" x="75" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Idle0002" x="150" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Idle0003" x="225" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Idle0004" x="300" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Up0000" x="375" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Up0001" x="450" y="0" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Up0002" x="0" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Down0000" x="75" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Down0001" x="150" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Down0002" x="225" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Left0000" x="300" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Left0001" x="375" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Left0002" x="450" y="126" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Right0000" x="0" y="253" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Right0001" x="75" y="253" width="75" height="125"/>
+	<SubTexture name="PsychSpirt Right0002" x="150" y="253" width="75" height="125"/>
+</TextureAtlas>
+	

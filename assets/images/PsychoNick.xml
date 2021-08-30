@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="gfCar.png">
+	<!-- suffer some more -->
+	<SubTexture name="psychonick idle0000" x="12.5" y="8.5" width="204" height="573"/>
+	<SubTexture name="psychonick left0000" x="622.5" y="32" width="263.5" height="530.5"/> <!--left-->
+	<SubTexture name="psychonick up0000" x="289" y="16" width="257.5" height="591"/> <!--up-->
+	<SubTexture name="psychonick right0000" x="406" y="610" width="377" height="567"/> <!--right-->
+	<SubTexture name="psychonick down0000" x="1" y="652.5" width="369.5" height="510"/> <!--down-->
+</TextureAtlas>
+	

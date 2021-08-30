@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="jobPortrait.png">
+	<SubTexture name="Portrait Enter10000" x="0" y="0" width="26" height="33"/>
+	<SubTexture name="Portrait Enter10001" x="26" y="0" width="26" height="33"/> 
+	<SubTexture name="Portrait Enter10002" x="52" y="0" width="26" height="33"/>
+	<SubTexture name="Portrait Enter10003" x="78" y="0" width="26" height="33"/>
+</TextureAtlas>

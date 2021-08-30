@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="nick.png">
+	<!-- suffer some more -->
+	<SubTexture name="nick idle0000" x="0" y="0" width="518" height="1168"/>
+	<SubTexture name="nick left0000" x="1312" y="1176" width="721" height="1148"/>
+	<SubTexture name="nick up0000" x="580" y="16" width="518" height="1168"/>
+	<SubTexture name="nick right0000" x="522" y="1211" width="721" height="1146"/>
+	<SubTexture name="nick down0000" x="0" y="1175" width="518" height="1146"/>
+</TextureAtlas>
+	
