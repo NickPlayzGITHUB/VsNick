@@ -93,7 +93,7 @@ class StoryMenuState extends MusicBeatState
 	override function create()
 	{
 		Main.clear();
-		Main.setstate("Selecting week...", "<beta build>");
+		Main.setstate("Selecting week...", "<V1.0.1>");
 		Main.state.largeImageKey = "boyfriend";
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;

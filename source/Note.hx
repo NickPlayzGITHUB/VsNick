@@ -58,6 +58,7 @@ class Note extends FlxSprite
 		//super.kill();
 	}
 	public var MultispriteBuffs:Array<FlxSprite> = [];
+	public var actor:Int = 0;
 	/* 6-fret
 	*** duplicate left and right
 	*** strumline notes, place in middle
@@ -84,9 +85,10 @@ class Note extends FlxSprite
 		openHold.scale.y *= 2;
 		openHold.antialiasing = true;
 	}
-	public function new(strumTime:Float, noteData:Int, category:Int = 0, ?prevNote:Note, ?sustainNote:Bool = false, ?ingame:Bool = true, ?RewindNote:Bool = false)
+	public function new(strumTime:Float, noteData:Int, category:Int = 0, ?prevNote:Note, ?sustainNote:Bool = false, ?ingame:Bool = true, ?RewindNote:Bool = false, ?actorVal:Int = 0)
 	{
 		Category6key = category;
+		actor = actorVal;
 		RewindOnMiss = RewindNote;
 		ig = ingame;
 		if(!PlayState.sixfret)

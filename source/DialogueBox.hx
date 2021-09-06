@@ -14,7 +14,7 @@ using StringTools;
 
 class DialogueBox extends FlxSpriteGroup
 {
-	var box:FlxSprite;
+	public var box:FlxSprite;
 
 	var curCharacter:String = '';
 
@@ -67,7 +67,8 @@ class DialogueBox extends FlxSpriteGroup
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
-	public function UpdatePortrait(whoistalk:String = ""){
+	function UpdatePortrait(whoistalk:String = ""){
+		var heightShit = FlxG.height / 720;
 		if(portraitLeft != null)
 			remove(portraitLeft);
 		var Entry:Array<Dynamic> = [];
@@ -96,6 +97,8 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft = new FlxSprite(-20, 40);
 		portraitLeft.frames = FlxAtlasFrames.fromSparrow('assets/images/'+Entry[1], 'assets/images/'+Entry[2]);
 		portraitLeft.animation.addByPrefix('enter', 'Portrait Enter', 24, E);
+		portraitLeft.x += box.x;
+		portraitLeft.y *= heightShit;
 		if(whoistalk.indexOf(".qbby") == 0)
 			portraitLeft.setGraphicSize(Std.int((portraitLeft.width * PlayState.daPixelZoom * 0.9) / 2));
 		else if(Entry[2] == "portrait.xml" || whoistalk.indexOf("whitty") == 0)
@@ -111,6 +114,7 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		super();
 
+		var heightShit = FlxG.height / 720;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'senpai':
@@ -132,7 +136,6 @@ class DialogueBox extends FlxSpriteGroup
 			if (bgFade.alpha > 0.7)
 				bgFade.alpha = 0.7;
 		}, 5);
-		UpdatePortrait("dad");
 		portraitRight = new FlxSprite(0, 40);
 		portraitRight.frames = FlxAtlasFrames.fromSparrow('assets/images/weeb/bfPortrait.png', 'assets/images/weeb/bfPortrait.xml');
 		portraitRight.animation.addByPrefix('enter', 'Portrait Enter', 24, false);
@@ -171,8 +174,9 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		box.animation.play('normalOpen');
-		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
+		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9 * heightShit));
 		box.updateHitbox();
+		UpdatePortrait("dad");
 		add(box);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic('assets/images/weeb/pixelUI/hand_textbox.png');
@@ -185,8 +189,9 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			// box.flipX = true;
 		}
+		var OffsetX:Int = Std.int((FlxG.width - 720) / 2);
 
-		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
+		dropText = new FlxText(242 + box.x, Std.int(502 * heightShit), Std.int(FlxG.width * 0.6), "", 32);
 		dropText.font = 'Pixel Arial 11 Bold';
 		if(PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
 			dropText.color = 0x052A5155;
@@ -194,7 +199,7 @@ class DialogueBox extends FlxSpriteGroup
 			dropText.color = 0x13595980;
 		add(dropText);
 
-		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
+		swagDialogue = new FlxTypeText(240 + box.x, Std.int(500 * heightShit), Std.int(FlxG.width * 0.6), "", 32);
 		swagDialogue.font = 'Pixel Arial 11 Bold';
 		if(PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
 			swagDialogue.color = 0xFFFCFCFC;

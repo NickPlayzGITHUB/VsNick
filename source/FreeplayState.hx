@@ -40,7 +40,7 @@ class FreeplayState extends MusicBeatState
 	{
 		Main.clear();
 		Main.state.largeImageKey = "boyfriend";
-		Main.setstate("Selecting song...", "<beta build>");
+		Main.setstate("Selecting song...", "<V1.0.1>");
 		songs = []; // CoolUtil.coolTextFile('assets/data/freeplaySonglist.txt'); [dupes.mpeg]
 
 		/* 

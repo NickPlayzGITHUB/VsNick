@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Nick-Confuse.png"><SubTexture name="nick-confuse nickafk0000" x="0" y="0" width="235" height="654" frameX="0" frameY="0" frameWidth="235" frameHeight="654" />
+<SubTexture name="nick-confuse neekup0000" x="235" y="0" width="270" height="606" frameX="0" frameY="0" frameWidth="270" frameHeight="606" />
+<SubTexture name="nick-confuse leftgglol0000" x="0" y="654" width="293" height="612" frameX="0" frameY="0" frameWidth="293" frameHeight="612" />
+<SubTexture name="nick-confuse rightfunny0000" x="293" y="654" width="246" height="627" frameX="0" frameY="0" frameWidth="246" frameHeight="627" />
+<SubTexture name="nick-confuse downooo0000" x="0" y="1281" width="241" height="607" frameX="0" frameY="0" frameWidth="241" frameHeight="607" />
+</TextureAtlas>

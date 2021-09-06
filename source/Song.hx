@@ -20,6 +20,8 @@ typedef SwagSong =
 	var player1:String;
 	var player2:String;
 	var validScore:Bool;
+	var actors:Int;
+	var excessPlayers:Array<String>;
 }
 
 class Song

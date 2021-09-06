@@ -61,6 +61,7 @@ class PlayState extends MusicBeatState
 	public static var misses:Int = 0; // Amount of notes missed
 	private var Percentage:Float = 1; // general accuracy, calculated with note timing over note rating
 	public static var storyPlaylist:Array<String> = [];
+	private var morePlayers:Array<Character> = [];
 	public static var storyDifficulty:Int = 1;
 	public static var NPS:Int = 0;
 	private var ip:Bool = false;
@@ -816,6 +817,67 @@ class PlayState extends MusicBeatState
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 		}
+		
+		if(bti(SONG.actors) > 1){
+			for(i in 1...SONG.actors){
+				var cdad = new Character(100 - (i*120), 100 + (i*20), SONG.excessPlayers[i-1]);
+
+				switch (SONG.excessPlayers[i-1])
+				{
+			
+					case 'nick':
+						dad.x += 150;
+						dad.y += 150;
+
+						case 'nick-confuse':
+						dad.x += 200;
+						dad.y += 100;
+
+						case 'nick-alt':
+							dad.x += 150;
+							dad.y += 100;
+		
+					case 'psycho-nick':
+						dad.x += 150;
+						dad.y += 150;
+		
+						case 'spirit-n':
+						dad.x += 150;
+						dad.y += -200;
+		
+						case 'spirit-n-glitch':
+						dad.x += 150;
+						dad.y += -200;
+					case 'gf':
+						cdad.setPosition(gf.x, gf.y);
+						gf.visible = false;
+					case 'bf':
+						cdad.y += 350;
+					case 'bf-pixel':
+						cdad.y += 500;
+					case "spooky":
+						cdad.y += 200;
+					case "monster":
+						cdad.y += 100;
+					case 'monster-christmas':
+						cdad.y += 130;
+					case 'pico':
+						cdad.y += 300;
+					case 'parents-christmas':
+						cdad.x -= 500;
+					case 'senpai':
+						cdad.x += 150;
+						cdad.y += 360;
+					case 'senpai-angry':
+						cdad.x += 150;
+						cdad.y += 360;
+					case 'spirit':
+						cdad.x -= 150;
+						cdad.y += 100;
+				}
+				morePlayers.push(cdad);
+			}
+		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
@@ -862,6 +924,8 @@ class PlayState extends MusicBeatState
 			add(limo);
 
 		add(dad);
+		for(i in morePlayers)
+			add(i);
 		add(boyfriend);
 
 		doof = new DialogueBox(false, dialogue);
@@ -922,6 +986,10 @@ class PlayState extends MusicBeatState
 		switch(SONG.player2){
 			case 'nick':
 				Player2 = 0xFFD775FF;
+			case 'nick-confuse':
+				Player2 = 0xFF990000;
+			case 'nick-alt':
+				Player2 = 0xFF990000;
 			case 'psycho-nick':
 				Player2 = 0xFF9719FF;
 			case 'spirit-n':
@@ -1147,6 +1215,9 @@ class PlayState extends MusicBeatState
 			{
 				dad.dance();
 				gf.dance();
+				for(i in morePlayers){
+					i.dance();
+				}
 				try {
 					boyfriend.playAnim('idle');
 				} catch(e) {
@@ -1286,6 +1357,9 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(songData.bpm);
 
 		curSong = songData.song;
+		if(curSong.toLowerCase() == 'nick-a-pocalypse')
+			if(bti(Highscore.getRaw("vocale"))<=0)
+				curSong = 'Nick-A-Pixelypse';
 
 		if (SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded("assets/music/" + curSong + "_Voices" + TitleState.soundExt);
@@ -1317,11 +1391,15 @@ class PlayState extends MusicBeatState
 				var RAWcat:Dynamic = songNotes[3];
 				var RAWrrjmiakfnjksnsdjfesuigfuiafndifgvberuiagboiaenrboavonvoeanfoiwenfwaeoibfiodewasafnewoibvgaewiobaueifewioafe:Dynamic = songNotes[4];
 				var daCat:Int = 0;
+				var RAWactor:Dynamic = songNotes[5];
+				var daActor:Int = 0;
 				var Why:Bool = false;
 				if(RAWcat != null)
 					daCat = RAWcat;
 				if(RAWrrjmiakfnjksnsdjfesuigfuiafndifgvberuiagboiaenrboavonvoeanfoiwenfwaeoibfiodewasafnewoibvgaewiobaueifewioafe != null)
 					Why = RAWrrjmiakfnjksnsdjfesuigfuiafndifgvberuiagboiaenrboavonvoeanfoiwenfwaeoibfiodewasafnewoibvgaewiobaueifewioafe;
+				if(RAWactor != null)
+					daActor = RAWactor;
 				var gottaHitNote:Bool = section.mustHitSection;
 
 				if (songNotes[1] > 4)
@@ -1340,23 +1418,23 @@ class PlayState extends MusicBeatState
 				else
 					oldNote = null;
 
-				var swagNote:Note = new Note(daStrumTime, daNoteData, daCat, oldNote, false, true, Why);
+				var swagNote:Note = new Note(daStrumTime, daNoteData, daCat, oldNote, false, true, Why, daActor);
 				swagNote.sustainLength = songNotes[2];
 				swagNote.scrollFactor.set(0, 0);
-
+				
 				var susLength:Float = swagNote.sustainLength;
-
-				susLength = susLength / Conductor.stepCrochet;
+				var crochetShit:Float = Conductor.stepCrochet;
+				susLength = susLength / crochetShit;
 				unspawnNotes.push(swagNote);
 
 				for (susNote in 0...Math.floor(susLength))
 				{
 					oldNote = unspawnNotes[Std.int(unspawnNotes.length - 1)];
 
-					var sustainNote:Note = new Note(daStrumTime + (Conductor.stepCrochet * susNote) + Conductor.stepCrochet, daNoteData, daCat, oldNote, true);
+					var sustainNote:Note = new Note(daStrumTime + (crochetShit * susNote) + Conductor.stepCrochet, daNoteData, daCat, oldNote, true, true, false, daActor);
 					sustainNote.scrollFactor.set();
 					unspawnNotes.push(sustainNote);
-
+	
 					sustainNote.mustPress = gottaHitNote;
 
 					if (sustainNote.mustPress)
@@ -1657,7 +1735,7 @@ class PlayState extends MusicBeatState
 		var splices:Array<Int> = [];
 		for(i in toDestroy){
 			///////////////////////////////////////trace('difference '+(i.strumTime - Conductor.songPosition), 'strumdata '+i.noteData);
-			if(i.strumTime - Conductor.songPosition < (time*1000)){
+			if(i.strumTime - Conductor.songPosition < (time*1000) && i.strumTime - Conductor.songPosition > 0){
 				i.revive();
 				i.wasGoodHit = false;
 				i.tooLate = false;
@@ -2085,31 +2163,35 @@ class PlayState extends MusicBeatState
 						if (SONG.notes[Math.floor(curStep / 16)].altAnim)
 							altAnim = '-alt';
 					}
+					var _dad = dad;
+					if(daNote.actor > 0 && SONG.actors > 1){
+						_dad = morePlayers[daNote.actor - 1];
+					}
 
 					switch (Math.abs(daNote.noteData))
 					{
 						case 0:
-							dad.playAnim('singLEFT' + altAnim, true);
+							_dad.playAnim('singLEFT' + altAnim, true);
 						case 1 | 5 | 7:
-							if((sixfret && Math.abs(daNote.noteData) == 1) || (ninefret && Math.abs(daNote.noteData) == 7))
-								dad.playAnim('singUP' + altAnim, true);
+							if((sixfret && Math.abs(daNote.noteData) == 1) || (ninefret && Math.abs(daNote.noteData) == 5))
+								_dad.playAnim('singUP' + altAnim, true);
 							else
-								dad.playAnim('singDOWN' + altAnim, true);
+								_dad.playAnim('singDOWN' + altAnim, true);
 						case 2 | 8:
 							if(sixfret)
-								dad.playAnim('singRIGHT' + altAnim, true);
+								_dad.playAnim('singRIGHT' + altAnim, true);
 							else
-								dad.playAnim('singUP' + altAnim, true);
+								_dad.playAnim('singUP' + altAnim, true);
 						case 3 | 6 | 10:
 							if((sixfret && Math.abs(daNote.noteData) == 3) || (ninefret &&  Math.abs(daNote.noteData) == 6))
-								dad.playAnim('singLEFT' + altAnim, true);
+								_dad.playAnim('singLEFT' + altAnim, true);
 							else
-								dad.playAnim('singRIGHT' + altAnim, true);
+								_dad.playAnim('singRIGHT' + altAnim, true);
 						case 4:
-							dad.playAnim('singUP' + altAnim, true);
+							_dad.playAnim('singUP' + altAnim, true);
 					}
 
-					dad.holdTimer = 0;
+					_dad.holdTimer = 0;
 
 					if (SONG.needsVoices)
 						vocals.volume = 1;
@@ -3185,8 +3267,12 @@ class PlayState extends MusicBeatState
 			// Conductor.changeBPM(SONG.bpm);
 
 			// Dad doesnt interupt his own notes
-			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection){
 				dad.dance();
+				for(i in morePlayers){
+					i.dance();
+				}
+			}
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);

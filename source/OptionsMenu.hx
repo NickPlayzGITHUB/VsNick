@@ -60,7 +60,8 @@ class OptionsMenu extends MusicBeatState
 				"480p",
 				"720p",
 				"900p",
-				"1080p"
+				"1080p",
+				"1440p"
 			],
 			saveas: "sr"
 		},
@@ -68,7 +69,7 @@ class OptionsMenu extends MusicBeatState
 			type: "ienum",
 			name: "mash protection",
 			def: 0,
-			grey: true, // not implemented yet
+			grey: false, // not implemented yet
 			indexers: [
 				"none",   	  // No protection against combo breaks
 				"medium",   // Protected from combo breaks in sections without notes
@@ -85,6 +86,16 @@ class OptionsMenu extends MusicBeatState
 				"off",
 				"speed (conservative)",
 				"precision (naïve)"
+			]
+		},
+		{
+			type: "ienum",
+			name: "n-a-p Vocals",
+			saveas: "vocale",
+			def: 0,
+			indexers: [
+				"new",
+				"old"
 			]
 		},
 		{
@@ -138,7 +149,8 @@ class OptionsMenu extends MusicBeatState
 				480,
 				720,
 				900,
-				1080
+				1080,
+				1440
 			];
 			var ri:Int = Highscore.Dynamix.get("sr");
 			FlxG.resizeGame(Std.int(res[ri] * (16 / 9)), res[ri]);

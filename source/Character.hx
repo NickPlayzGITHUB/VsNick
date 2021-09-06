@@ -134,10 +134,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'nick right', 24, false);
 
 				addOffset('idle');
-				addOffset("singUP", 0, 0);
-				addOffset("singRIGHT", -50, -0);
-				addOffset("singLEFT", -30, 0);
-				addOffset("singDOWN", 0, 0);
+				addOffset("singUP", -10, 0);
+				addOffset("singRIGHT", 38, -8);
+				addOffset("singLEFT", 121, -9);
+				addOffset("singDOWN", 0, -10);
 
 				playAnim('idle');
 
@@ -152,10 +152,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'nick right', 24, false);
 
 				addOffset('idle');
-				addOffset("singUP", 0, 0);
-				addOffset("singRIGHT", -50, -0);
-				addOffset("singLEFT", -30, 0);
-				addOffset("singDOWN", 0, 0);
+				addOffset("singUP", -10, 0);
+				addOffset("singRIGHT", 38, -8);
+				addOffset("singLEFT", 121, -9);
+				addOffset("singDOWN", 0, -10);
 
 				playAnim('idle');
 
@@ -170,10 +170,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'psychonick right', 24, false);
 
 				addOffset('idle');
-				addOffset("singUP", 10, 0);
-				addOffset("singRIGHT", -50, -0);
-				addOffset("singLEFT", 70, -30);
-				addOffset("singDOWN", 10, -30);
+				addOffset("singUP", 50, 14);
+				addOffset("singRIGHT", 9, -0);
+				addOffset("singLEFT", 92, -42);
+				addOffset("singDOWN", 50, -64);
 
 				playAnim('idle');
 
@@ -222,6 +222,42 @@ class Character extends FlxSprite
 				updateHitbox();
 
 				antialiasing = false;
+
+				case 'nick-confuse':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/Nick-Confuse.png', 'assets/images/Nick-Confuse.xml');
+				frames = tex;
+
+				animation.addByPrefix('idle', "nick-confuse nickafk0000", 24, false);
+				animation.addByPrefix('singUP', "nick-confuse neekup0000", 24, false);
+				animation.addByPrefix('singDOWN', "nick-confuse downooo0000", 24, false);
+				animation.addByPrefix('singLEFT', 'nick-confuse leftgglol0000', 24, false);
+				animation.addByPrefix('singRIGHT', 'nick-confuse rightfunny0000', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 36, -39);
+				addOffset("singRIGHT", 10, -21);
+				addOffset("singLEFT", 2, -37);
+				addOffset("singDOWN", 0, -42);
+
+				playAnim('idle');
+
+				case 'nick-alt':
+					tex = FlxAtlasFrames.fromSparrow('assets/images/Nick-AltUni.png', 'assets/images/Nick-AltUni.xml');
+					frames = tex;
+	
+					animation.addByPrefix('idle', "Nick-AltUni altidle0000", 24, false);
+					animation.addByPrefix('singUP', "Nick-AltUni altup0000", 24, false);
+					animation.addByPrefix('singDOWN', "Nick-AltUni altdown0000", 24, false);
+					animation.addByPrefix('singLEFT', 'Nick-AltUni altleft0000', 24, false);
+					animation.addByPrefix('singRIGHT', 'Nick-AltUni altright0000', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 48, 0);
+				addOffset("singRIGHT", 49, -2);
+				addOffset("singLEFT", -14, -37);
+				addOffset("singDOWN", -53, -138);
+
+				playAnim('idle');
 
 			case 'haxeflixel':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/HAXE.png', 'assets/images/HAXE.xml');

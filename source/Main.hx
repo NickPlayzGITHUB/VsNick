@@ -17,7 +17,7 @@ class Main extends Sprite
 	public static var shutdown = false;
 	private var addfps = true;
 	public static var state:Dynamic = {
-		details: "<V1.0>",
+		details: "<V1.0.1>",
 		state: "Title Screen",
 		largeImageKey: "boyfriend",
 		largeImageText: "Vs Nick LOL",

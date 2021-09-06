@@ -2,7 +2,6 @@ bf
 dad
 gf
 spooky
-haxeflixel
 pico
 mom
 mom-car
@@ -15,10 +14,10 @@ monster
 bf-pixel
 senpai
 spirit
-whitty
-zardy
 nick
 bi-nick
 psycho-nick
 spirit-n
 spirit-n-glitch
+nick-confuse
+nick-alt
