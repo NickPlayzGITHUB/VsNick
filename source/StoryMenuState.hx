@@ -23,56 +23,22 @@ class StoryMenuState extends MusicBeatState
 
 	public static final weekData:Array<Array<String>> = [
 		['Tutorial'],
-		['Bopeebo', 'Fresh', 'Dadbattle'],
-		['Spookeez', 'South'],
-					/*
-						Fuck you,
-						* Madness
-						* Ballistic
-						* M1KU-B0T
-						* Target-Practice
-						* Boxing Match
-						* The random overmaps I've made
-						* run (unused version)
-						I'll be harder.
-						
-						Flixel = Test, but with the FNFuck executable being used as Pixel BF's
-									   voice (Might be possible to pull off )
-						Self-Modifying = Completely off-the rails track (HaxeFlixel "Phase 2")
-						Bitrot = Phase 3, where HaxeFlixel is trying to calm BF down to avoid
-									  the game self-destructing
-					*/
-		['Pico', 'Philly', "Blammed"],
-		['Satin-Panties', "High", "Milf"],
-		['Cocoa', 'Eggnog', 'Winter-Horrorland'],
-		['Senpai', 'Roses', 'Thorns'],
-		['Inceptive', 'Bit-fight', 'Nick-a-Pocalypse'] // It be no working D:
-												   // I plan on adding some speed options.
+		['Inceptive', 'Bit-fight', 'Nick-a-Pocalypse'],
+		['Interceptive']
 	];
 	public static var curDifficulty:Int = 1;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true, true, true];
 
 	public static final weekCharacters:Array<Dynamic> = [
 		['dad', 'bf', 'gf'],
-		['dad', 'bf', 'gf'],
-		['spooky', 'bf', 'gf'],
-		['pico', 'bf', 'gf'],
-		['mom', 'bf', 'gf'],
-		['parents-christmas', 'bf', 'gf'],
-		['senpai', 'bf', 'gf'],
 		['nick', 'bf', 'gf']
 	];
 
 	public static final weekNames:Array<String> = [
 		"Tutorial",
-		"Daddy Dearest",
-		"Spooky Month",
-		"Pico",
-		"Mommy Must Murder",
-		"Red Snow",
-		"Hating Simulator FT. Moawling",
-		"Plays but with a Z"
+		"Plays but with a Z",
+		"Cross-dimensional Toys"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -126,7 +92,8 @@ class StoryMenuState extends MusicBeatState
 
 		grpLocks = new FlxTypedGroup<FlxSprite>();
 		add(grpLocks);
-
+		if(FlxG.save.data.weekUnlocked != null)
+			FlxG.save.data.weekUnlocked = weekUnlocked;
 		trace("Line 70");
 
 		for (i in 0...weekData.length)
@@ -141,10 +108,12 @@ class StoryMenuState extends MusicBeatState
 			// weekThing.updateHitbox();
 
 			// Needs an offset thingie
+			weekThing.color = 0xFFFFFFFF;
 			if (!weekUnlocked[i])
 			{
 				var lock:FlxSprite = new FlxSprite(weekThing.width + 10 + weekThing.x);
 				lock.frames = ui_tex;
+				weekThing.color = 0xFF777777;
 				lock.animation.addByPrefix('lock', 'lock');
 				lock.animation.play('lock');
 				lock.ID = i;
@@ -482,6 +451,7 @@ class StoryMenuState extends MusicBeatState
 			txtTracklist.text += "\n" + i;
 		}
 
+		txtTracklist.text += "\n";
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.screenCenter(X);

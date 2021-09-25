@@ -35,8 +35,10 @@ class HealthIcon extends FlxSprite
 		animation.add('nick', [24, 25], 0, false, isPlayer);
 		animation.add('bi-nick', [24, 25], 0, false, isPlayer);
 		animation.add('psycho-nick', [26, 27], 0, false, isPlayer);
+		animation.add('nick-knife', [26, 27], 0, false, isPlayer);
 		animation.add('nick-confuse', [31, 30], 0, false, isPlayer);
 		animation.add('nick-alt', [31, 30], 0, false, isPlayer);
+		animation.add('spiritrtx', [34, 33], 0, false, isPlayer);
 		animation.play(char);
 		scrollFactor.set();
 	}

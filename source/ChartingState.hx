@@ -110,7 +110,8 @@ class ChartingState extends MusicBeatState
 				validScore: false,
 				clf: 0,
 				actors: 1,
-				excessPlayers: []
+				excessPlayers: [],
+				offsets: []
 			};
 		}
 		GRID_SIZE = Std.int(160 / (_song.sixkey ? 6 : _song.ninekey ? 8 : 4));
@@ -219,7 +220,7 @@ class ChartingState extends MusicBeatState
 			trace('CHECKED!');
 		};
 
-		var check_mute_inst = new FlxUICheckBox(10, 200, null, null, "Mute Instrumental (in editor)", 100);
+		var check_mute_inst = new FlxUICheckBox(130, 45, null, null, "Mute Instr.", 100);
 		check_mute_inst.checked = false;
 		check_mute_inst.callback = function()
 		{
@@ -251,7 +252,7 @@ class ChartingState extends MusicBeatState
 		stepperSpeed.value = _song.speed;
 		stepperSpeed.name = 'song_speed';
 		
-		var stepperShit:FlxUINumericStepper = new FlxUINumericStepper(10, 130, 1, 0, 0, 1e97, 0); // measures leadin
+		var stepperShit:FlxUINumericStepper = new FlxUINumericStepper(74, 80, 1, 0, 0, 1e97, 0); // measures leadin
 		if(PlayState.bti(_song.clf) >= 0)
 			stepperShit.value = _song.clf;
 		stepperShit.name = 'song_mlead';
@@ -447,8 +448,7 @@ class ChartingState extends MusicBeatState
 
 		 */
 	}
-	
-	private var FillSpaces:Array<FlxUIDropDownMenu> = [];
+	private var FillSpaces:Array<Array<Dynamic>> = [];
 
 	private function addPlayer(){
 		var f:Int = FillSpaces.length;
@@ -456,24 +456,37 @@ class ChartingState extends MusicBeatState
 		if(_song.excessPlayers == null){
 			_song.excessPlayers = [];
 		}
+		if(_song.offsets == null){
+			_song.offsets = [];
+		}
 		while(_song.excessPlayers.length <= f){
 			_song.excessPlayers.push("gf");
+			_song.offsets.push([0, 0]);
 		}
 		var playerNDropDown = new FlxUIDropDownMenu(140, 100 + ((f+1)*30), FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String)
 		{
 			_song.excessPlayers[f] = characters[Std.parseInt(character)];
 			updateHeads();
 		});
+		var godnoX:FlxUINumericStepper = new FlxUINumericStepper(10, 100 + ((f+1)*30)+2.5, 10, _song.offsets[f][0], Math.NEGATIVE_INFINITY, Math.POSITIVE_INFINITY, 3);
+		godnoX.name = 'offsetX$f';
+		var godnoY:FlxUINumericStepper = new FlxUINumericStepper(godnoX.x + godnoX.width + 5, godnoX.y, 10, _song.offsets[f][1], Math.NEGATIVE_INFINITY, Math.POSITIVE_INFINITY, 3);
+		godnoY.name = 'offsetY$f';
 		playerNDropDown.selectedLabel = _song.excessPlayers[f];
-		FillSpaces.push(playerNDropDown);
+		FillSpaces.push([playerNDropDown, godnoX, godnoY]);
 		tab_group_song.add(playerNDropDown);
+		tab_group_song.add(godnoX);
+		tab_group_song.add(godnoY);
 	}
 	private function removePlayer(){
 		_song.excessPlayers.pop();
-		var x:FlxUIDropDownMenu = FillSpaces.pop();
-		tab_group_song.remove(x, true);
-		if(x != null)
-			x.destroy();
+		_song.offsets.pop();
+		var x:Array<Dynamic> = FillSpaces.pop();
+		for(i in x){
+			tab_group_song.remove(i, true);
+			if(i != null)
+				i.destroy();
+		}
 	}
 
 	override function getEvent(id:String, sender:Dynamic, data:Dynamic, ?params:Array<Dynamic>)
@@ -509,6 +522,14 @@ class ChartingState extends MusicBeatState
 			else if (wname == 'song_speed')
 			{
 				_song.speed = nums.value;
+			}
+			else if (StringTools.startsWith(wname, 'offsetX'))
+			{
+				_song.offsets[Std.parseInt(wname.substr(7))][0] = nums.value;
+			}
+			else if (StringTools.startsWith(wname, 'offsetY'))
+			{
+				_song.offsets[Std.parseInt(wname.substr(7))][1] = nums.value;
 			}
 			else if (wname == 'song_mlead')
 			{

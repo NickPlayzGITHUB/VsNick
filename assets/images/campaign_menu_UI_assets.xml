@@ -25,4 +25,6 @@
 	<SubTexture name="week2 select0000" x="0" y="670" width="361" height="87"/>
 	<SubTexture name="nock 0001" x="373" y="757" width="365" height="103"/>
 	<SubTexture name="nock 0000" x="0" y="757" width="365" height="103"/>
+	<SubTexture name="nock^3 0001" x="376" y="860" width="373" height="101"/>
+	<SubTexture name="nock^3 0000" x="0" y="860" width="373" height="101"/>
 </TextureAtlas>

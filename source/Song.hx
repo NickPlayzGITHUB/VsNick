@@ -22,6 +22,7 @@ typedef SwagSong =
 	var validScore:Bool;
 	var actors:Int;
 	var excessPlayers:Array<String>;
+	var offsets:Array<Array<Float>>;
 }
 
 class Song

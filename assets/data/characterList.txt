@@ -1,4 +1,5 @@
 bf
+bf-mad
 dad
 gf
 spooky
@@ -21,3 +22,4 @@ spirit-n
 spirit-n-glitch
 nick-confuse
 nick-alt
+spiritrtx

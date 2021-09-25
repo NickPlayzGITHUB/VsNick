@@ -52,7 +52,7 @@ class TitleState extends MusicBeatState
 		#end
 
 		PlayerSettings.init();
-		curWacky = ["Fuck Kade Engine,", "We only Distay Engine"];
+		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		// DEBUG BULLSHIT
 

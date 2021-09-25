@@ -660,6 +660,14 @@ class PlayState extends MusicBeatState
 			bg.scale.x *=0.6;
 			bg.scale.y *=0.6;
 		}
+		else if(SONG.song.toLowerCase() == 'interceptive')
+			{
+				var bg:FlxSprite = new FlxSprite(-850, -200).loadGraphic('assets/images/nickaltroom.png');
+				bg.active = false;
+				add(bg);
+				bg.scale.x *=0.6;
+				bg.scale.y *=0.6;
+			}
 		else if(SONG.song.toLowerCase() == 'bit-fight')
 		{
 			var bg:FlxSprite = new FlxSprite(-850, -200).loadGraphic('assets/images/nickroomevil.png');
@@ -742,7 +750,7 @@ class PlayState extends MusicBeatState
         var OffsetGF_Y:Int = 0;
         
 
-		if (Name == 'inceptive' || Name == 'bit-fight'){
+		if (Name == 'inceptive' || Name == 'bit-fight' || Name == 'interceptive'){
 			gfVersion = 'gf-laptop';
 			OffsetGF_X = -750; // please change this
 			OffsetGF_Y = -300;
@@ -769,6 +777,10 @@ class PlayState extends MusicBeatState
 			case 'nick':
 				dad.x += 150;
 				dad.y += 150;
+
+			case 'nick-alt':
+				dad.x += 50;
+				dad.y += 50;
 
 			case 'psycho-nick':
 				dad.x += 150;
@@ -820,7 +832,8 @@ class PlayState extends MusicBeatState
 		
 		if(bti(SONG.actors) > 1){
 			for(i in 1...SONG.actors){
-				var cdad = new Character(100 - (i*120), 100 + (i*20), SONG.excessPlayers[i-1]);
+				var o:Array<Float> = SONG.offsets[i-1];
+				var cdad = new Character(100 - (i*120) + o[0], 100 + (i*20) + o[1], SONG.excessPlayers[i-1]);
 
 				switch (SONG.excessPlayers[i-1])
 				{
@@ -1979,17 +1992,6 @@ class PlayState extends MusicBeatState
 
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
-		if(SONG.song == 'Bit-Fight'){
-			switch(curBeat){
-				case 165:
-					if(!Phase2BF_Fuse){
-						remove(boyfriend);
-						boyfriend = new Boyfriend(770, 450, 'bf-mad');
-						add(boyfriend);
-						Phase2BF_Fuse = true;
-					}
-			}
-		}
 		if (curSong == 'Fresh')
 		{
 			switch (curBeat)
@@ -3250,7 +3252,21 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
-
+		
+		if (curSong.toLowerCase() == 'bit-fight')
+			{
+				switch (curBeat)
+				{
+					case 165:
+						remove(boyfriend);
+						boyfriend = new Boyfriend(770, 450, 'bf-mad');
+						add(boyfriend);
+					case 164:
+						remove(dad);
+						dad = new Character (250, 250, 'nick-knife');
+						add (dad);
+				}
+			}
 		if (generatedMusic)
 		{
 			notes.sort(FlxSort.byY, FlxSort.DESCENDING);

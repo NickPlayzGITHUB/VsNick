@@ -74,23 +74,6 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'whitty':
-				// Straight ported from GF
-				tex = FlxAtlasFrames.fromSparrow('assets/images/b/WhittyCrazy.png', 'assets/images/b/WhittyCrazy.xml');
-				frames = tex;
-				animation.addByPrefix('singLEFT', 'Whitty Sing Note LEFT', 24, false);
-				animation.addByPrefix('singRIGHT', 'whitty sing note right', 24, false);
-				animation.addByPrefix('singUP', 'Whitty Sing Note UP', 24, false);
-				animation.addByPrefix('singDOWN', 'Whitty Sing Note DOWN', 24, false);
-				animation.addByIndices('idle', 'Whitty idle dance', [12, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24);
-				addOffset('idle');
-
-				addOffset("singUP", 0, 4);
-				addOffset("singRIGHT", 0, -20);
-				addOffset("singLEFT", 0, -19);
-				addOffset("singDOWN", 0, -20);
-
-				playAnim('idle');
 
 			case 'gf-christmas':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/christmas/gfChristmas.png', 'assets/images/christmas/gfChristmas.xml');
@@ -123,7 +106,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-				case 'nick':
+			case 'nick':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/Nick.png', 'assets/images/Nick.xml');
 				frames = tex;
 
@@ -141,7 +124,25 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-				case 'bi-nick':
+			case 'spiritrtx':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/spiritrtx.png', 'assets/images/spiritrtx.xml');
+				frames = tex;
+
+				animation.addByPrefix('idle', "spiritrtx rtxidel", 24, false);
+				animation.addByPrefix('singUP', "spiritrtx rtxup", 24, false);
+				animation.addByPrefix('singDOWN', "spiritrtx rtxdown", 24, false);
+				animation.addByPrefix('singLEFT', 'spiritrtx rtxleft', 24, false);
+				animation.addByPrefix('singRIGHT', 'spiritrtx rtxright', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -10, 0);
+				addOffset("singRIGHT", 38, -8);
+				addOffset("singLEFT", 121, -9);
+				addOffset("singDOWN", 0, -10);
+
+				playAnim('idle');
+
+			case 'bi-nick':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/Bi-Nick.png', 'assets/images/Bi-Nick.xml');
 				frames = tex;
 
@@ -161,6 +162,24 @@ class Character extends FlxSprite
 
 			case 'psycho-nick':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/PsychoNick.png', 'assets/images/PsychoNick.xml');
+				frames = tex;
+
+				animation.addByPrefix('idle', "psychonick idle", 24, false);
+				animation.addByPrefix('singUP', "psychonick up", 24, false);
+				animation.addByPrefix('singDOWN', "psychonick down", 24, false);
+				animation.addByPrefix('singLEFT', 'psychonick left', 24, false);
+				animation.addByPrefix('singRIGHT', 'psychonick right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 50, 14);
+				addOffset("singRIGHT", 9, -0);
+				addOffset("singLEFT", 92, -42);
+				addOffset("singDOWN", 50, -64);
+
+				playAnim('idle');
+
+			case 'nick-knife':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/Nick-Knife.png', 'assets/images/Nick-Knife.xml');
 				frames = tex;
 
 				animation.addByPrefix('idle', "psychonick idle", 24, false);
@@ -223,7 +242,7 @@ class Character extends FlxSprite
 
 				antialiasing = false;
 
-				case 'nick-confuse':
+			case 'nick-confuse':
 				tex = FlxAtlasFrames.fromSparrow('assets/images/Nick-Confuse.png', 'assets/images/Nick-Confuse.xml');
 				frames = tex;
 
@@ -241,15 +260,15 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-				case 'nick-alt':
-					tex = FlxAtlasFrames.fromSparrow('assets/images/Nick-AltUni.png', 'assets/images/Nick-AltUni.xml');
-					frames = tex;
-	
-					animation.addByPrefix('idle', "Nick-AltUni altidle0000", 24, false);
-					animation.addByPrefix('singUP', "Nick-AltUni altup0000", 24, false);
-					animation.addByPrefix('singDOWN', "Nick-AltUni altdown0000", 24, false);
-					animation.addByPrefix('singLEFT', 'Nick-AltUni altleft0000', 24, false);
-					animation.addByPrefix('singRIGHT', 'Nick-AltUni altright0000', 24, false);
+			case 'nick-alt':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/Nick-AltUni.png', 'assets/images/Nick-AltUni.xml');
+				frames = tex;
+
+				animation.addByPrefix('idle', "Nick-AltUni altidle0000", 24, false);
+				animation.addByPrefix('singUP', "Nick-AltUni altup0000", 24, false);
+				animation.addByPrefix('singDOWN', "Nick-AltUni altdown0000", 24, false);
+				animation.addByPrefix('singLEFT', 'Nick-AltUni altleft0000', 24, false);
+				animation.addByPrefix('singRIGHT', 'Nick-AltUni altright0000', 24, false);
 
 				addOffset('idle');
 				addOffset("singUP", 48, 0);
@@ -492,7 +511,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-mad':
-				var tex = FlxAtlasFrames.fromSparrow('assets/images/BOYFRIEND_Phase2.png', 'assets/images/BOYFRIEND_Phase2.xml');
+				var tex = FlxAtlasFrames.fromSparrow('assets/images/BoyFriend_Phase2.png', 'assets/images/BoyFriend_Phase2.xml');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
@@ -503,13 +522,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
 				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
-
-				animation.addByPrefix('firstDeath', "BF dies", 24, false);
-				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
-
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
 
 				addOffset('idle', -5);
 				addOffset("singUP", -29, 27);
@@ -520,30 +532,12 @@ class Character extends FlxSprite
 				addOffset("singRIGHTmiss", -30, 21);
 				addOffset("singLEFTmiss", 12, 24);
 				addOffset("singDOWNmiss", -11, -19);
-				addOffset("hey", 7, 4);
-				addOffset('firstDeath', 37, 11);
-				addOffset('deathLoop', 37, 5);
-				addOffset('deathConfirm', 37, 69);
-				addOffset('scared', -4);
 
 				playAnim('idle');
 
 				flipX = true;
 				
-			case 'zardy':
-				var tex = FlxAtlasFrames.fromSparrow('assets/images/Zardy.png', 'assets/images/Zardy.xml');
-				frames = tex;
-				animation.addByPrefix('idle', 'Idle', 24, false);
-				animation.addByPrefix('singUP', 'Sing Up', 24, false);
-				animation.addByPrefix('singDOWN', 'Sing Down', 24, false);
-				animation.addByPrefix('singLEFT', 'Sing Left', 24, false);
-				animation.addByPrefix('singRIGHT', 'Sing Right', 24, false);
-				addOffset('idle');
-				addOffset('singUP');
-				addOffset('singDOWN');
-				addOffset('singLEFT');
-				addOffset('singRIGHT');
-				playAnim('idle');
+			playAnim('idle');
 
 			case 'bf-christmas':
 				var tex = FlxAtlasFrames.fromSparrow('assets/images/christmas/bfChristmas.png', 'assets/images/christmas/bfChristmas.xml');

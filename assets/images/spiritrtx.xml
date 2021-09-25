@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="spiritrtx.png"><SubTexture name="spiritrtx rtxidel0000" x="0" y="0" width="352" height="598" frameX="0" frameY="0" frameWidth="352" frameHeight="598" />
+<SubTexture name="spiritrtx rtxdown0000" x="352" y="0" width="525" height="472" frameX="0" frameY="0" frameWidth="525" frameHeight="472" />
+<SubTexture name="spiritrtx rtxup0000" x="0" y="598" width="427" height="599" frameX="0" frameY="0" frameWidth="427" frameHeight="599" />
+<SubTexture name="spiritrtx rtxright0000" x="427" y="598" width="570" height="561" frameX="0" frameY="0" frameWidth="570" frameHeight="561" />
+<SubTexture name="spiritrtx rtxleft0000" x="0" y="1197" width="530" height="543" frameX="0" frameY="0" frameWidth="530" frameHeight="543" />
+</TextureAtlas>

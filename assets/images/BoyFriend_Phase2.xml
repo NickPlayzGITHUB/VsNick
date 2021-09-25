@@ -397,28 +397,4 @@
 	<SubTexture name="BF idle dance0011" x="7336" y="1853" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
 	<SubTexture name="BF idle dance0012" x="7336" y="1853" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
 	<SubTexture name="BF idle dance0013" x="7336" y="1853" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
-	<SubTexture name="bf right miss reg color0000" x="7744" y="1853" width="399" height="397"/>
-	<SubTexture name="down miss purp dude0000" x="0" y="2288" width="377" height="387"/>
-	<SubTexture name="down miss purp dude0001" x="0" y="2288" width="377" height="387"/>
-	<SubTexture name="down miss purp dude0002" x="377" y="2288" width="377" height="387"/>
-	<SubTexture name="down miss purp dude0003" x="377" y="2288" width="377" height="387"/>
-	<SubTexture name="down miss reg color0000" x="754" y="2288" width="377" height="355"/>
-	<SubTexture name="left miss reg color0000" x="1131" y="2288" width="370" height="399"/>
-	<SubTexture name="miss left f color0000" x="1501" y="2288" width="370" height="430"/>
-	<SubTexture name="miss left f color0001" x="1501" y="2288" width="370" height="430"/>
-	<SubTexture name="miss left f color0002" x="1871" y="2288" width="370" height="429" frameX="0" frameY="-1" frameWidth="370" frameHeight="430"/>
-	<SubTexture name="miss left f color0003" x="1871" y="2288" width="370" height="429" frameX="0" frameY="-1" frameWidth="370" frameHeight="430"/>
-	<SubTexture name="miss up reg color0000" x="2241" y="2288" width="356" height="425"/>
-	<SubTexture name="purp mizz combine0000" x="2597" y="2288" width="356" height="428"/>
-	<SubTexture name="purp mizz combine0001" x="2597" y="2288" width="356" height="428"/>
-	<SubTexture name="purp mizz combine0002" x="2953" y="2288" width="356" height="428"/>
-	<SubTexture name="purp mizz combine0003" x="2953" y="2288" width="356" height="428"/>
-	<SubTexture name="purp note down mizz0000" x="3309" y="2288" width="377" height="355"/>
-	<SubTexture name="purp right mzz0000" x="3686" y="2288" width="399" height="397"/>
-	<SubTexture name="purp up mizz0000" x="4085" y="2288" width="356" height="425"/>
-	<SubTexture name="purple lef miz0000" x="4441" y="2288" width="370" height="399"/>
-	<SubTexture name="right note miss colorsawddwa0000" x="4811" y="2288" width="399" height="432"/>
-	<SubTexture name="right note miss colorsawddwa0001" x="4811" y="2288" width="399" height="432"/>
-	<SubTexture name="right note miss colorsawddwa0002" x="5210" y="2288" width="399" height="432"/>
-	<SubTexture name="right note miss colorsawddwa0003" x="5210" y="2288" width="399" height="432"/>
 </TextureAtlas>
