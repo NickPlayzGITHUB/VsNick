@@ -23,22 +23,20 @@ class StoryMenuState extends MusicBeatState
 
 	public static final weekData:Array<Array<String>> = [
 		['Tutorial'],
-		['Inceptive', 'Bit-fight', 'Nick-a-Pocalypse'],
-		['Interceptive']
+		['Brownie']
 	];
 	public static var curDifficulty:Int = 1;
 
 	public static var weekUnlocked:Array<Bool> = [true, true, true];
 
 	public static final weekCharacters:Array<Dynamic> = [
-		['dad', 'bf', 'gf'],
-		['nick', 'bf', 'gf']
+		['none', 'bf', 'gf'],
+        ['none', 'bf', 'gf']
 	];
 
 	public static final weekNames:Array<String> = [
 		"Tutorial",
-		"Plays but with a Z",
-		"Cross-dimensional Toys"
+		"Quack"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -218,7 +216,7 @@ class StoryMenuState extends MusicBeatState
 		// scoreText.setFormat('VCR OSD Mono', 32);
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore[0], 0.5 * (60 / FlxG.updateFramerate)));
 
-		scoreText.text = 'WEEK SCORE: $lerpScore \nAVERAGE WEEK RATING: ${Rate(intendedScore[1])}';
+		scoreText.text = 'PRESS SHIFT FOR MORE INFO  WEEK SCORE: $lerpScore \nAVERAGE WEEK RATING: ${Rate(intendedScore[1])}';
 
 		txtWeekTitle.text = weekNames[curWeek].toUpperCase();
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);

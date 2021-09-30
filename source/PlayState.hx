@@ -652,13 +652,13 @@ class PlayState extends MusicBeatState
 				add(waveSpriteFG);
 			 */
 		}
-		else if(SONG.song.toLowerCase() == 'inceptive')
+		else if(SONG.song.toLowerCase() == 'Brownie')
 		{
-			var bg:FlxSprite = new FlxSprite(-850, -200).loadGraphic('assets/images/nickroom.png');
+			var bg:FlxSprite = new FlxSprite(-850, -200).loadGraphic('assets/images/duckomans/sunlol.png');
 			bg.active = false;
 			add(bg);
-			bg.scale.x *=0.6;
-			bg.scale.y *=0.6;
+			bg.scale.x *=2.0;
+			bg.scale.y *=2.0;
 		}
 		else if(SONG.song.toLowerCase() == 'interceptive')
 			{

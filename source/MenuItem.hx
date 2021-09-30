@@ -20,8 +20,7 @@ class MenuItem extends FlxSpriteGroup
 		week.frames = tex;
 		// TUTORIAL IS WEEK 0
 		week.animation.addByPrefix('week0', 'tutorial selected', 24);
-		week.animation.addByPrefix('week1', "nock 0", 24);
-		week.animation.addByPrefix('week2', "nock^3", 24);
+		week.animation.addByPrefix('week1', "WEEK1 select", 24);
 		add(week);
 
 		week.animation.play('week' + weekNum);

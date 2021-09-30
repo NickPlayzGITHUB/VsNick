@@ -106,15 +106,15 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-			case 'nick':
-				tex = FlxAtlasFrames.fromSparrow('assets/images/Nick.png', 'assets/images/Nick.xml');
+			case 'ducc':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/duckomans/DuckoMan.png', 'assets/images/duckomans/DuckoMan.xml');
 				frames = tex;
 
-				animation.addByPrefix('idle', "nick idle", 24, false);
-				animation.addByPrefix('singUP', "nick up", 24, false);
-				animation.addByPrefix('singDOWN', "nick down", 24, false);
-				animation.addByPrefix('singLEFT', 'nick left', 24, false);
-				animation.addByPrefix('singRIGHT', 'nick right', 24, false);
+				animation.addByPrefix('idle', "DuckMan idle", 24, false);
+				animation.addByPrefix('singUP', "DuckMan up", 24, false);
+				animation.addByPrefix('singDOWN', "DuckMan down", 24, false);
+				animation.addByPrefix('singLEFT', 'DuckMan left', 24, false);
+				animation.addByPrefix('singRIGHT', 'DuckMan right', 24, false);
 
 				addOffset('idle');
 				addOffset("singUP", -10, 0);

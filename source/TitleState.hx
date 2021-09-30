@@ -129,7 +129,7 @@ class TitleState extends MusicBeatState
 			FlxG.sound.music.fadeIn(4, 0, 0.7);
 		}
 
-		Conductor.changeBPM(102);
+		Conductor.changeBPM(140);
 		persistentUpdate = true;
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -356,7 +356,7 @@ class TitleState extends MusicBeatState
 			case 5:
 				createCoolText(['Mod made', 'by']);
 			case 7:
-				addMoreText('Distray Nickplayz AeroxGD');
+				addMoreText('NickPlayz');
 				ngSpr.visible = true;
 			// credTextShit.text += '\nNewgrounds';
 			case 8:
@@ -384,8 +384,7 @@ class TitleState extends MusicBeatState
 				addMoreText('Yeah u playing');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Friday Night funkin vs nick'); // credTextShit.text += '\nFunkin';
-
+				addMoreText('Friday Night funkin vs ducko'); // credTextShit.text += '\nFunkin';
 			case 16:
 				skipIntro();
 		}

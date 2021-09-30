@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<TextureAtlas imagePath="Nick-AltUni.png"><SubTexture name="Nick-AltUni altidle0000" x="0" y="0" width="214" height="593" frameX="0" frameY="0" frameWidth="214" frameHeight="593" />
-<SubTexture name="Nick-AltUni altdown0000" x="214" y="0" width="340" height="463" frameX="0" frameY="0" frameWidth="340" frameHeight="463" />
-<SubTexture name="Nick-AltUni altright0000" x="0" y="593" width="363" height="561" frameX="0" frameY="0" frameWidth="363" frameHeight="561" />
-<SubTexture name="Nick-AltUni altleft0000" x="363" y="593" width="321" height="593" frameX="0" frameY="0" frameWidth="321" frameHeight="593" />
-<SubTexture name="Nick-AltUni altup0000" x="0" y="1186" width="352" height="590" frameX="0" frameY="0" frameWidth="352" frameHeight="590" />
-</TextureAtlas>

@@ -84,18 +84,8 @@ class OptionsMenu extends MusicBeatState
 			def: 0,
 			indexers: [
 				"off",
-				"speed (conservative)",
-				"precision (naïve)"
-			]
-		},
-		{
-			type: "ienum",
-			name: "n-a-p Vocals",
-			saveas: "vocale",
-			def: 0,
-			indexers: [
-				"new",
-				"old"
+				"speed (better at hitting notes)",
+				"precision (better at hitting sicks)"
 			]
 		},
 		{
